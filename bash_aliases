@@ -1,8 +1,10 @@
+#!/bin/bash
 echo "loading bash aliases..."
 
 # Mike's bash functions
 # Bash Profile
-alias ab='atom ~/.bashrc'
+alias ab='atom ~/.bashrc ~/bash_profile_addons/bash_functions \
+  ~/bash_profile_addons/bash_aliases'
 alias abf='atom ~/bash_profile_addons/.bash_functions'
 alias aba='atom ~/bash_profile_addons/.bash_aliases'
 alias sb='source ~/.bashrc'
@@ -15,10 +17,13 @@ alias d='cd'
 alias b='cd ..'
 alias c='clear'
 alias src='cd ~/src'
+alias bsh='cd ~/bash_profile_addons'
 alias md='mkdir -p'
 alias t='touch'
+
+# Atom
 alias a='atom .'
-alias o='nohup' # o for open, nohup detaches command from terminal
+alias absh='atom ~/bash_profile_addons'
 
 # Git
 alias gst='git status'
@@ -38,7 +43,7 @@ alias rse="ruby server.rb"
 
 # Rails
 alias rl='rails logs'
-# alias rs='rails server'
+alias rs='rails server'
 alias rs?='lsof -wni tcp:3000'
 alias rc='rails console'
 alias rdd='rake db:drop'
@@ -61,5 +66,7 @@ alias tb='thunderbird &>/dev/null & disown'
 alias sp='spotify &>/dev/null & disown'
 alias start='google-chrome &>/dev/null & slack &>/dev/null & thunderbird &>/dev/null & spotify &>/dev/null & disown'
 alias chr='google-chrome &>/dev/null & disown'
+alias pm='google-chrome --app-id=fhbjgbiflinjbdggehcddcbncdddomop'
+# alias o='xdg-open "$1" &>/dev/null & disown'
 
 echo "Done"

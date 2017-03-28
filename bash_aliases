@@ -89,7 +89,6 @@ alias rse="ruby server.rb"
 # Rails
 alias rl='rails logs'
 alias rs='rails server'
-# alias rs?='lsof -wni tcp:3000' # problem here
 alias rc='rails console'
 alias rdd='rake db:drop'
 alias rdc='rake db:create'
@@ -120,7 +119,7 @@ alias sp='spotify'
 alias chr='chrome'
 alias pm='postman'
 alias ml='mail'
-alias start='chrome & slack & spotify & mail & disown'
+alias start='chrome & slack & spotify & mail'
 # alias py='python3 ~/src/pymodoro/pymodoro.py'
 
 echo "Done"

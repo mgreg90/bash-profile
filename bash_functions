@@ -12,7 +12,6 @@ echo "loading bash functions..."
   }
 
   function chrome_in_zone() {
-    ### Customize these
 
     # Change this to the spoof a different timezone. Helpful for testing timezone specific client facing content.
     if [[ ! "$1" ]]; then
@@ -54,86 +53,79 @@ echo "loading bash functions..."
   #
   export PATH=$PATH:~/.android-sdk-macosx/platform-tools/
 
-# Run rails server in the background with easy bouncing and toggling
-# function rs() {
-#   if [[ -f tmp/pids/server.pid ]]; then
-#     kill -9 $(cat tmp/pids/server.pid)
-#     rm tmp/pids/server.pid
-#     if [ "$1" = "-b" ]; then
-#       rails server -d >>log.txt 2>&1 & disown
-#       echo "------------------------------- SERVER WAS BOUNCED -------------------------------" >> log/development.log
-#       echo "bouncing server..."
-#     else
-#       echo "killing server..."
-#       echo "------------------------------- SERVER WAS KILLED --------------------------------" >> log/development.log
-#     fi
-#     return 0
-#   else
-#     rails server -d >>log.txt 2>&1 & disown
-#     echo "------------------------------- SERVER WAS STARTED -------------------------------" >> log/development.log
-#     echo "starting server..."
-#     return 0
-#   fi
-# }
-
-# Changes rails logs to print dev log of rails project
-# function rails() {
-#   if [ "$1" = "logs" ]; then
-#     cat log.txt
-#   else
-#     command rails $@
-#   fi
-# }
-
 #########################
 # Conditional App Aliases
 #########################
 
-function slack() {
+function slack_app() {
   if [ "$_system_name" = "OSX" ]; then
+    echo "Opening Slack in Mac OSX"
     open /Applications/Slack.app
+  elif [ "$_system_type" = "Linux" ]; then
+    echo "Opening Slack in Linux"
+    slack &>/dev/null
   else
-    slack &>/dev/null & disown
+    echo "Failed!"
   fi
 }
+alias slack='slack_app'
 
-function spotify() {
+function spotify_app() {
   if [ "$_system_name" = "OSX" ]; then
+    echo "Opening Spotify in Mac OSX"
     open /Applications/Spotify.app
-  else
+  elif [ "$_system_type" = "Linux" ]; then
+    echo "Opening Spotify in Linux"
     spotify &>/dev/null & disown
+  else
+    echo "Failed!"
   fi
 }
+alias spotify='spotify_app'
 
 function chrome() {
   if [ "$_system_name" = "OSX" ]; then
+    echo "Opening Chrome in Mac OSX"
     open /Applications/Google\ Chrome.app
-  else
+  elif [ "$_system_type" = "Linux" ]; then
+    echo "Opening Chrome in Linux"
     google-chrome &>/dev/null & disown
+  else
+    echo "Failed!"
   fi
 }
 
 function postman() {
   if [ "$_system_name" = "OSX" ]; then
+    echo "Opening Postman in Mac OSX"
     open /Users/${USER}/Applications/Chrome\ Apps.localized/Default\ fhbjgbiflinjbdggehcddcbncdddomop.app/
-  else
+  elif [ "$_system_type" = "Linux" ]; then
+    echo "Opening Postman in Linux"
     google-chrome --app-id=fhbjgbiflinjbdggehcddcbncdddomop &>/dev/null & disown
+  else
+    echo "Failed!"
   fi
 }
 
 function mail() {
   if [ "$_system_name" = "OSX" ]; then
+    echo "Opening Mail in Mac OSX"
     open /Applications/Mail.app
-  else
+  elif [ "$_system_type" = "Linux" ]; then
+    echo "Opening Thunderbird in Mac OSX"
     thunderbird &>/dev/null & disown
+  else
+    echo "Failed!"
   fi
 }
 
 function o() {
   if [ "$_system_name" = "OSX" ]; then
     open $1
-  else
+  elif [ "$_system_type" = "Linux" ]; then
     xdg-open "$1" &>/dev/null & disown
+  else
+    echo "Failed!"
   fi
 }
 

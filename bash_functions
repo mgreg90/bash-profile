@@ -10,7 +10,7 @@ echo "loading bash functions..."
       xdg-open "$1" &>/dev/null & disown
     fi
   }
-  
+
   function chrome_in_zone() {
     ### Customize these
 
@@ -45,13 +45,13 @@ echo "loading bash functions..."
         exec open -na "Google Chrome" --args "--user-data-dir=$fresh_dir"
     fi
   }
-  
+
   # timezones
   # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   # get browser timezone js
   # Intl.DateTimeFormat().resolvedOptions().timeZone
-  # 
-  # 
+  #
+  #
   export PATH=$PATH:~/.android-sdk-macosx/platform-tools/
 
 # Run rails server in the background with easy bouncing and toggling
@@ -117,7 +117,7 @@ function postman() {
   if [ "$_system_name" = "OSX" ]; then
     open /Users/${USER}/Applications/Chrome\ Apps.localized/Default\ fhbjgbiflinjbdggehcddcbncdddomop.app/
   else
-    google-chrome &>/dev/null & disown
+    google-chrome --app-id=fhbjgbiflinjbdggehcddcbncdddomop &>/dev/null & disown
   fi
 }
 

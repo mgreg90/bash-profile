@@ -10,6 +10,13 @@ echo "loading bash functions..."
       xdg-open "$1" &>/dev/null & disown
     fi
   }
+  
+  function token() {
+    CC_TOKEN=$(curl -H "Accept: text/html" \
+    "https://services.development.carecloud.com/login?login=${CC_LOGIN}&password=${CC_PASSWORD}")
+    echo $CC_TOKEN
+    echo $CC_TOKEN | pbcopy
+  }
 
   function chrome_in_zone() {
 

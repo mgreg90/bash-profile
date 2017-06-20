@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "loading bash aliases..."
+echo "\tloading bash aliases..."
 
 # Mike's Bash Functions
 git_stash_apply() {
@@ -122,4 +122,4 @@ alias ml='mail'
 alias start='chrome & slack & spotify & mail'
 # alias py='python3 ~/src/pymodoro/pymodoro.py'
 
-echo "Done"
+echo "\t\tDone"

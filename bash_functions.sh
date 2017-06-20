@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "loading bash functions..."
+echo "\tloading bash functions..."
 
   function o() {
     if [ ! "$1" ]; then
@@ -9,13 +9,6 @@ echo "loading bash functions..."
       echo "opening $1"
       xdg-open "$1" &>/dev/null & disown
     fi
-  }
-  
-  function token() {
-    CC_TOKEN=$(curl -H "Accept: text/html" \
-    "https://services.development.carecloud.com/login?login=${CC_LOGIN}&password=${CC_PASSWORD}")
-    echo $CC_TOKEN
-    echo $CC_TOKEN | pbcopy
   }
 
   function chrome_in_zone() {
@@ -137,4 +130,4 @@ function o() {
 }
 
 
-echo "Done"
+echo "\t\tDone"

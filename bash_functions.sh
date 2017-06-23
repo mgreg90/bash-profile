@@ -124,6 +124,7 @@ function copy() {
     ubuntu_copy
   else
     echo "copy function Failed!"
+  fi
 }
 
 echo "\t\tDone"

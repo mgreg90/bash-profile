@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "\tloading bash functions..."
+echo "\n\tloading bash functions..."
 
   function o() {
     if [ ! "$1" ]; then

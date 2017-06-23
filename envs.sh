@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "\tloading bash environment variables..."
+echo "\n\tloading bash environment variables..."
 
 echo "\t\tDone"

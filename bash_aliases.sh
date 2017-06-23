@@ -51,6 +51,9 @@ alias nm='cd /usr/local/lib/node_modules'
 alias md='mkdir -p'
 alias t='touch'
 
+# Utilities
+alias ubuntu_copy='xsel -ib'
+
 # Atom
 alias a='atom .'
 

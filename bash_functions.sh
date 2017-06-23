@@ -1,16 +1,6 @@
 #!/bin/bash
 echo "\n\tloading bash functions..."
 
-  function o() {
-    if [ ! "$1" ]; then
-      echo "opening finder..."
-      xdg-open .  &>/dev/null & disown
-    else
-      echo "opening $1"
-      xdg-open "$1" &>/dev/null & disown
-    fi
-  }
-
   function chrome_in_zone() {
 
     # Change this to the spoof a different timezone. Helpful for testing timezone specific client facing content.
@@ -27,8 +17,6 @@ echo "\n\tloading bash functions..."
     # Temporary directory in which to create new user-data directories for
     # temporary Chrome instances.
     tmp_dir="/tmp"
-
-
 
     ### Main script begins
 
@@ -65,7 +53,7 @@ function slack_app() {
     echo "Opening Slack in Linux"
     slack &>/dev/null
   else
-    echo "Failed!"
+    echo "slack function Failed!"
   fi
 }
 alias slack='slack_app'
@@ -78,7 +66,7 @@ function spotify_app() {
     echo "Opening Spotify in Linux"
     spotify &>/dev/null & disown
   else
-    echo "Failed!"
+    echo "spotify function Failed!"
   fi
 }
 alias spotify='spotify_app'
@@ -91,7 +79,7 @@ function chrome() {
     echo "Opening Chrome in Linux"
     google-chrome &>/dev/null & disown
   else
-    echo "Failed!"
+    echo "chrome function Failed!"
   fi
 }
 
@@ -103,7 +91,7 @@ function postman() {
     echo "Opening Postman in Linux"
     google-chrome --app-id=fhbjgbiflinjbdggehcddcbncdddomop &>/dev/null & disown
   else
-    echo "Failed!"
+    echo "postman function Failed!"
   fi
 }
 
@@ -115,7 +103,7 @@ function mail() {
     echo "Opening Thunderbird in Mac OSX"
     thunderbird &>/dev/null & disown
   else
-    echo "Failed!"
+    echo "mail function Failed!"
   fi
 }
 
@@ -125,9 +113,17 @@ function o() {
   elif [ "$_system_type" = "Linux" ]; then
     xdg-open "$1" &>/dev/null & disown
   else
-    echo "Failed!"
+    echo "open function Failed!"
   fi
 }
 
+function copy() {
+  if [ "$_system_name" = "OSX" ]; then
+    pbcopy
+  elif [ "$_system_type" = "Linux" ]; then
+    ubuntu_copy
+  else
+    echo "copy function Failed!"
+}
 
 echo "\t\tDone"

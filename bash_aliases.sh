@@ -27,8 +27,6 @@ bash_text() {
 # Bash Profile
 alias ab='atom ~/src/bash-profile'
 alias abz='atom ~/.zshrc'
-alias abf='atom ~/src/bash-profile/bash_profile_addons/.bash_functions'
-alias aba='atom ~/src/bash-profile/bash_profile_addons/.bash_aliases'
 alias sb='source ~/.zshrc'
 
 # Vim bash profile
@@ -48,6 +46,10 @@ alias src='cd ~/src'
 alias cc='cd ~/src/cc'
 alias node_mod='cd /usr/local/lib/node_modules'
 alias nm='cd /usr/local/lib/node_modules'
+alias ws='cd ~/src/cc/webservices'
+alias xapi='cd ~/src/cc/external_api'
+alias flex='cd ~/Documents/CareCloud_Sources/Flex_App'
+alias bp='cd ~/src/bash-profile'
 alias md='mkdir -p'
 alias t='touch'
 

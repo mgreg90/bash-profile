@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "\tloading bash aliases..."
+echo "\n\tloading bash aliases..."
 
 # Mike's Bash Functions
 git_stash_apply() {
@@ -52,6 +52,9 @@ alias flex='cd ~/Documents/CareCloud_Sources/Flex_App'
 alias bp='cd ~/src/bash-profile'
 alias md='mkdir -p'
 alias t='touch'
+
+# Utilities
+alias ubuntu_copy='xsel -ib'
 
 # Atom
 alias a='atom .'

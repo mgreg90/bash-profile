@@ -15,11 +15,16 @@ git_stash_file() {
   git reset HEAD~
 }
 
+
 bash_text() {
   echo "first arg:"
   echo $1
   echo "remaining args:"
   echo "${@:2}"
+}
+
+ruby_script() {
+  ruby $RUBY_SCRIPT_FILE "$@"
 }
 
 # Mike's Bash Aliases
@@ -43,12 +48,17 @@ alias d='cd'
 alias b='cd ..'
 alias c='clear'
 alias src='cd ~/src'
+alias des='cd ~/Desktop'
 alias cc='cd ~/src/cc'
+alias sr='cd ~/src/student-resources'
 alias node_mod='cd /usr/local/lib/node_modules'
 alias nm='cd /usr/local/lib/node_modules'
 alias ws='cd ~/src/cc/webservices'
 alias xapi='cd ~/src/cc/external_api'
 alias flex='cd ~/Documents/CareCloud_Sources/Flex_App'
+alias wa='cd ~/src/WorkoutApp'
+alias ed='cd ~/src/cc/edison-conductor'
+alias com='cd ~/src/cc/community'
 alias bp='cd ~/src/bash-profile'
 alias md='mkdir -p'
 alias t='touch'
@@ -125,6 +135,13 @@ alias chr='chrome'
 alias pm='postman'
 alias ml='mail'
 alias start='chrome & slack & spotify & mail'
+alias balsamiq='open /Applications/Balsamiq\ Mockups\ 3.app'
 # alias py='python3 ~/src/pymodoro/pymodoro.py'
+
+# Scripts
+alias prices='ruby_script prices'
+alias rep_prices='ruby_script repeating_prices'
+alias 🤑='ruby_script prices'
+alias coins='ruby_script coins'
 
 echo "\t\tDone"

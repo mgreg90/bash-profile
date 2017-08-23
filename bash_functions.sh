@@ -1,6 +1,15 @@
 #!/bin/bash
 echo "\n\tloading bash functions..."
 
+  function sunglasses() {
+    echo -en " ( •_•)   \r"
+    sleep 1
+    echo -en " ( •_•)>⌐■-■\r"
+    sleep 1
+    echo " (⌐■_■)     "
+    echo "Deal with it"
+  }
+
   function chrome_in_zone() {
 
     # Change this to the spoof a different timezone. Helpful for testing timezone specific client facing content.
@@ -125,6 +134,16 @@ function copy() {
   else
     echo "copy function Failed!"
   fi
+}
+
+function ssh-pers() {
+  ssh-add -D
+  ssh-add ~/.ssh/git_mgreg90
+}
+
+function ssh-work() {
+  ssh-add -D
+  ssh-add ~/.ssh/git_carecloud
 }
 
 echo "\t\tDone"

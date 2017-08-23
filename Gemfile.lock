@@ -1,0 +1,26 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.8.0)
+    clipboard (1.1.1)
+    curses (1.2.3)
+    httparty (0.15.6)
+      multi_xml (>= 0.5.2)
+    multi_xml (0.6.0)
+    ruby-terminfo (0.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  clipboard
+  curses
+  httparty
+  ruby-terminfo
+
+RUBY VERSION
+   ruby 2.4.0p0
+
+BUNDLED WITH
+   1.14.4

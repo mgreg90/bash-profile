@@ -1,9 +1,14 @@
 require 'httparty'
+
 module Script
   class AbstractService
 
     def get
       HTTParty.get("#{url}?#{query_string}").parsed_response
+    rescue => e
+      err_msg = "Request for prices failed! Are you connected to the internet?"
+      TerminalDisplay.new(err_msg, border: '!', text_align: :center, height: 20).display
+      abort
     end
 
     def url

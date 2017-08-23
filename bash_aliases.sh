@@ -143,5 +143,6 @@ alias prices='ruby_script prices'
 alias rep_prices='ruby_script repeating_prices'
 alias 🤑='ruby_script prices'
 alias coins='ruby_script coins'
+alias trello='ruby_script trello'
 
 echo "\t\tDone"

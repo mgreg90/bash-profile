@@ -9,6 +9,10 @@ module Script
   def self.repeating_prices(argv)
     Bitcoin.new(argv).repeating_prices
   end
+  
+  def self.trello(argv)
+    Trello.new.launch
+  end
 
 end
 

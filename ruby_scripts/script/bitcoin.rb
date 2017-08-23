@@ -52,14 +52,16 @@ module Script
     def build_strings
       fresh_prices = get_prices
       clear
-      fresh_prices.map do |coin, price|
+      fresh_prices = fresh_prices.map do |coin, price|
         "Current Coinbase #{COIN_MAP[coin][:name]} Price: $#{price}"
       end
+      fresh_prices << "Last Fetched At: #{@last_fetch.strftime('%x %r')}"
     end
 
     # Get prices from cryptocompare API
     def get_prices
       @coins.map do |coin|
+        @last_fetch = Time.now
         [coin, Service.new(coin).get_prices["USD"]]
       end.to_h
     end

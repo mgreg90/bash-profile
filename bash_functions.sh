@@ -136,6 +136,8 @@ function copy() {
   fi
 }
 
+# SSH
+
 function ssh-pers() {
   ssh-add -D
   ssh-add ~/.ssh/git_mgreg90
@@ -145,5 +147,26 @@ function ssh-work() {
   ssh-add -D
   ssh-add ~/.ssh/git_carecloud
 }
+
+# Git
+
+function git_commit_file() {
+  printf '=%.0s' {1..35}
+  printf ' Commit Message '
+  printf '=%.0s' {1..35}
+  echo
+  cat .commit-msg.txt
+  echo
+  printf '=%.0s' {1..86}
+  printf "\nAccept Commit? (y/n) "
+  read resp
+  case $resp in 
+    [Yy]* )
+      git commit -F .commit-msg.txt;;
+    [Nn]* )
+      echo "Commit aborted!";;
+  esac
+}
+alias gc='git_commit_file'
 
 echo "\t\tDone"

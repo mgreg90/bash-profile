@@ -20,6 +20,7 @@ class Bitcoin
     }
   }
   LOADING_MESSAGE = "Fetching Prices..."
+  REPEATING_PRICES_TIMER = 300
   
   def initialize(*coins)
     @coins = (coins.flatten.empty? ? DEFAULT_COINS : coins.flatten.map(&:upcase))
@@ -38,7 +39,12 @@ class Bitcoin
   def repeating_prices
     loop do
       Script::TerminalDisplay.new(LOADING_MESSAGE, border: "=").display
-      Script::TerminalDisplay.new(build_strings, display_seconds: 10, border: "=", clear_after_display: true).display
+      Script::TerminalDisplay.new(
+        build_strings,
+        display_seconds: REPEATING_PRICES_TIMER,
+        border: "=",
+        clear_after_display: true
+      ).display
     end
   end
   

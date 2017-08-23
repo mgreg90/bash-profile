@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "\n\tloading bash aliases..."
+echo "\tloading bash aliases..."
 
 # Mike's Bash Functions
 git_stash_apply() {

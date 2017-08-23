@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "\n\tloading bash functions..."
+echo "\tloading bash functions..."
 
   function sunglasses() {
     echo -en " ( •_•)   \r"

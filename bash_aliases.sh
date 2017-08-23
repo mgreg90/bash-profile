@@ -139,11 +139,12 @@ alias balsamiq='open /Applications/Balsamiq\ Mockups\ 3.app'
 # alias py='python3 ~/src/pymodoro/pymodoro.py'
 
 # Scripts
-alias prices='ruby_script prices'
-alias rep_prices='ruby_script repeating_prices'
-alias 🤑='ruby_script prices'
-alias coins='ruby_script coins'
-alias trello='ruby_script trello'
-alias jira='ruby_script jira'
+function create_ruby_scripts() {
+  ruby $RUBY_CREATE_SCRIPTS_FILE
+}
+create_ruby_scripts
+
+alias 🤑='prices'
+alias rep_prices='repeating_prices'
 
 echo "\t\tDone"

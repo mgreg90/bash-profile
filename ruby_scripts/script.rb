@@ -1,4 +1,5 @@
 Dir["#{File.dirname(__FILE__)}/script/**/*.rb"].each { |file| require file }
+require_relative 'git_pry'
 
 module Script
 
@@ -12,6 +13,10 @@ module Script
   
   def self.trello(argv)
     Trello.new.launch
+  end
+  
+  def self.jira(argv)
+    Jira.new.launch
   end
 
 end

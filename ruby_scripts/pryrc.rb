@@ -25,7 +25,7 @@ end
 begin
   require "terminfo"
   require "curses"
-  require '~/src/git-ruby/git.rb'
+  require_relative 'git_pry.rb'
   
   def gst; git status; end
   def gd; git diff; end

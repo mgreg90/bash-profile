@@ -1,5 +1,3 @@
-require 'pry'
-
 module Script
   class Trello
     def initialize

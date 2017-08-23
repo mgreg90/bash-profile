@@ -1,3 +1,4 @@
+require 'httparty'
 module Script
   class AbstractService
 

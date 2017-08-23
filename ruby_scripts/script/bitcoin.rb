@@ -1,4 +1,4 @@
-require 'httparty'
+require 'awesome_print'
 require_relative 'terminal_utils'
 require_relative 'terminal_display'
 require_relative 'bitcoin/service'
@@ -8,7 +8,7 @@ module Script
 
     include Script::TerminalUtils
 
-    DEFAULT_COINS = ['BTC', 'ETH', 'LTC']
+    DEFAULT_COINS = ['BTC', 'ETH', 'BCH', 'XRP', 'LTC', 'ETC']
     COIN_MAP = {
       "BTC" => {
         name: 'Bitcoin'
@@ -52,19 +52,28 @@ module Script
     def build_strings
       fresh_prices = get_prices
       clear
-      fresh_prices = fresh_prices.map do |coin, price|
-        "Current Coinbase #{COIN_MAP[coin][:name]} Price: $#{price}"
+      fresh_prices = fresh_prices.map do |coin|
+        # TODO this is super hacky. Fix it.
+        first_tab = if coin['name'].length >= 9
+          "\t"
+        elsif coin['name'].length >= 5
+          "\t\t"
+        else
+          "\t\t\t"
+        end
+        
+        second_tab = coin['price_usd'].to_f.to_money.length < 7 ? "\t\t" : "\t"
+        "#{coin['name']} (#{coin['symbol']})#{first_tab} Price: #{coin['price_usd'].to_f.to_money};#{second_tab} Market Cap: #{coin['market_cap_usd'].to_f.to_money}"
       end
-      fresh_prices << "Last Fetched At: #{@last_fetch.strftime('%x %r')}"
+      fresh_prices.unshift("According to CoinMarketCap...\n\n")
+      fresh_prices << "\nLast Fetched At: #{@last_fetch.strftime('%x %r')}"
     end
 
     # Get prices from cryptocompare API
     def get_prices
-      @coins.map do |coin|
-        @last_fetch = Time.now
-        [coin, Service.new(coin).get_prices["USD"]]
-      end.to_h
+      @last_fetch = Time.now
+      Service.new(@coins).get_prices
     end
-
+    
   end
 end

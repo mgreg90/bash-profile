@@ -9,6 +9,4 @@ File.open(File.join(ROOT, "script.rb")) do |f|
   end
 end
 puts "WARNING: Script Aliases Failed" if ruby_scripts.empty?
-ruby_scripts.each do |script_name|
-  `alias #{script_name}='ruby_script #{script_name}'`
-end
+puts ruby_scripts.join(' ')

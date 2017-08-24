@@ -140,7 +140,11 @@ alias balsamiq='open /Applications/Balsamiq\ Mockups\ 3.app'
 
 # Scripts
 function create_ruby_scripts() {
-  ruby $RUBY_CREATE_SCRIPTS_FILE
+  gems=($(ruby $RUBY_CREATE_SCRIPTS_FILE))
+  for method in $gems
+  do
+    alias $method="ruby_script $method"
+  done
 }
 create_ruby_scripts
 

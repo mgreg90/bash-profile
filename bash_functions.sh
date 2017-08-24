@@ -166,6 +166,7 @@ function git_commit_file() {
     [Nn]* )
       echo "Commit aborted!";;
   esac
+  echo "\n\nCommited at: $(date)" >> .commit-msg.txt
 }
 alias gc='git_commit_file'
 

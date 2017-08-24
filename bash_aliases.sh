@@ -15,7 +15,6 @@ git_stash_file() {
   git reset HEAD~
 }
 
-
 bash_text() {
   echo "first arg:"
   echo $1

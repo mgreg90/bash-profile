@@ -4,7 +4,9 @@ module Script
     JIRA_URL = ENV['JIRA_URL'].freeze
     
     def initialize
-      @branch = git branch no_print: true, current_branch: true # this comes from git_pry.rb
+      if File.exists?('.git')
+        @branch = git branch no_print: true, current_branch: true # this comes from git_pry.rb
+      end
     end
     def launch
       if JIRA_URL && @branch

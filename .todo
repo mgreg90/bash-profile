@@ -1,2 +1,3 @@
 1. Add script to load base gems in all projects
 2. Add better line spacing tools to TerminalDisplay and refactor tab situation in bitcoin display.
+3. Colorize bitcoin display so it's green if it's up and red if down

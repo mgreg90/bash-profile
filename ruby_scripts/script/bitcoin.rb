@@ -63,7 +63,7 @@ module Script
         end
         
         second_tab = coin['price_usd'].to_f.to_money.length < 8 ? "\t\t" : "\t"
-        "#{coin['name']} (#{coin['symbol']})#{first_tab} Price: #{coin['price_usd'].to_f.to_money}#{second_tab} Market Cap: #{coin['market_cap_usd'].to_f.to_money}"
+        "#{coin['name']} (#{coin['symbol']})#{first_tab} Price: #{coin['price_usd'].to_f.to_money}#{second_tab} 24hr % Change: #{coin['percent_change_24h']}%\t\tMarket Cap: #{coin['market_cap_usd'].to_f.to_money}"
       end
       fresh_prices.unshift("According to CoinMarketCap...\n\n")
       fresh_prices << "\nLast Fetched At: #{@last_fetch.strftime('%x %r')}"

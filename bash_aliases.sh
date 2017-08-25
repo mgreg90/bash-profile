@@ -138,6 +138,9 @@ alias start='chrome & slack & spotify & mail'
 alias balsamiq='open /Applications/Balsamiq\ Mockups\ 3.app'
 # alias py='python3 ~/src/pymodoro/pymodoro.py'
 
+# Misc
+alias star_wars='telnet towel.blinkenlights.nl'
+
 # Scripts
 function create_ruby_scripts() {
   gems=($(ruby $RUBY_CREATE_SCRIPTS_FILE))

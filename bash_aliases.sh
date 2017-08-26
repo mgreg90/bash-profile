@@ -142,15 +142,11 @@ alias balsamiq='open /Applications/Balsamiq\ Mockups\ 3.app'
 alias star_wars='telnet towel.blinkenlights.nl'
 
 # Scripts
-function create_ruby_scripts() {
-  gems=($(ruby $RUBY_CREATE_SCRIPTS_FILE))
-  for method in $gems
-  do
-    alias $method="ruby_script $method"
-  done
-}
-create_ruby_scripts
-
+alias prices='ruby_script prices'
+alias repeating_prices='ruby_script repeating_prices'
+alias rp='repeating_prices'
+alias trello='ruby_script trello'
+alias jira='ruby_script jira'
 alias 🤑='prices'
 alias rep_prices='repeating_prices'
 

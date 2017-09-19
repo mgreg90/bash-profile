@@ -16,6 +16,7 @@ module Script
         set_query_string(
           convert: @priced_in_currency.to_s.upcase
         )
+        set_error_message("Request for prices failed! Are you connected to the internet?")
         get.select { |coin| @coin_tickers.include?(coin['symbol'])}
       end
 

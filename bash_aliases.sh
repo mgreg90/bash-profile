@@ -78,6 +78,7 @@ alias gf='git fetch'
 alias gcm='git commit -m '
 alias ac='atom .commit-msg.txt'
 alias gca='git commit --amend'
+alias grv='git remote -v'
 alias gp='git push'
 alias gpo='git push origin'
 alias gpom='git push origin master'
@@ -112,6 +113,11 @@ alias rds='rake db:seed'
 alias rr='rake routes'
 alias rdr='rake db:drop db:create db:migrate db:seed'
 alias bi='bundle install'
+
+# Yarn
+alias ys='yarn start'
+alias yi='yarn install'
+alias yt='yarn test'
 
 # Heroku
 alias hl='heroku logs'

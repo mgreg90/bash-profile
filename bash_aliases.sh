@@ -22,6 +22,10 @@ bash_text() {
   echo "${@:2}"
 }
 
+path() {
+  ruby -e "puts ENV['PATH'].split(':')"
+}
+
 ruby_script() {
   ruby $RUBY_SCRIPT_FILE "$@"
 }
@@ -60,6 +64,7 @@ alias ed='cd ~/src/cc/edison-conductor'
 alias com='cd ~/src/cc/community'
 alias cuil='cd ~/src/cc/cuil'
 alias bp='cd ~/src/bash-profile'
+alias pw='cd ~/src/playwright'
 alias md='mkdir -p'
 alias t='touch'
 
@@ -81,6 +86,7 @@ alias gca='git commit --amend'
 alias grv='git remote -v'
 alias gp='git push'
 alias gpo='git push origin'
+alias gpu='git push upstream'
 alias gpom='git push origin master'
 alias gphm='git push heroku master'
 alias gpma='git push origin master && git push heroku master'
@@ -153,6 +159,7 @@ alias repeating_prices='ruby_script repeating_prices'
 alias rp='repeating_prices'
 alias trello='ruby_script trello'
 alias jira='ruby_script jira'
+alias github='ruby_script github'
 alias 🤑='prices'
 alias rep_prices='repeating_prices'
 

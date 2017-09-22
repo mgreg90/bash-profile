@@ -18,6 +18,10 @@ module Script
   def self.jira(argv)
     Jira.new.launch
   end
+  
+  def self.github(argv)
+    Github.new.launch
+  end
 
 end
 

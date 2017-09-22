@@ -33,6 +33,12 @@ module Git
     puts `git reset #{commit_hash}`
   end
   
+  def self.remote(options={})
+    grv = `git remote -v`
+    puts grv unless options[:no_print]
+    grv
+  end
+  
   def self.branch(options={})
     branches = `git branch`
     puts branches unless options[:no_print]
@@ -81,6 +87,7 @@ DIFF = 'diff'.freeze
 LOG = 'log'.freeze
 RESET = 'reset'.freeze
 BRANCH = 'branch'.freeze
+REMOTE = 'remote'.freeze
 
 def status
   STATUS
@@ -110,6 +117,10 @@ def branch(options={})
   [BRANCH, options]
 end
 
+def remote
+  REMOTE
+end
+
 def git(*command)
   command.flatten!
   
@@ -128,6 +139,8 @@ def git(*command)
     command[1] ? Git.reset(command[1]) : Git.reset
   when BRANCH
     command[1] ? Git.branch(command[1]) : Git.branch
+  when REMOTE
+    command[1] ? Git.remote(command[1]) : Git.remote
   end
   
 end

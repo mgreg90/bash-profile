@@ -15,8 +15,9 @@ module Script
           JIRA_URL
         else
           puts "Launching Jira in your default browser..."
-          `open #{JIRA_URL}browse/#{@branch}`
-          "#{JIRA_URL}browse/#{@branch}"
+          url = "#{JIRA_URL}browse/#{@branch}"
+          `open #{url}`
+          url
         end
       else
         puts "You need a JIRA_URL in your environment variables." if !JIRA_URL
